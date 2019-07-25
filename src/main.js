@@ -10,6 +10,14 @@ Vue.use(Router)
 
 Vue.config.productionTip = false
 
+Vue.component('AlertBox', {
+  template: `
+    <div>
+      <strong>Error!</strong>
+    </div>
+  `
+});
+
 new Vue({
   el: '#app',
   router,
