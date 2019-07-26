@@ -1,11 +1,15 @@
 import Router from 'vue-router'
-
+//Common
 import Home from '../pages/common/Home'
 import About from '../pages/common/About'
 import ErrComp from '../pages/common/Err'
+///Tests
+import Test from '../pages/test/Test'
+import Test1 from '../pages/test/Test1Form'
 
 export default new Router({
   routes: [
+    //common
     {
       name:'homePage',
       path: '',
@@ -25,6 +29,17 @@ export default new Router({
       redirect: {
         name: 'errPage'
       }
+    },
+    //tests
+    {
+      path: '/test',
+      component: Test,
+      children: [
+        {
+          path: 'test1',
+          component: Test1
+        },
+      ]
     },
   ],
   mode: 'history'

@@ -1,4 +1,5 @@
 <template>
+    
     <router-view></router-view>
 </template>
 
@@ -9,3 +10,8 @@ export default {
   },
 }
 </script>
+<style>
+form input{
+  
+}
+</style>
