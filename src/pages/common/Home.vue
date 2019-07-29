@@ -1,21 +1,23 @@
 <template>
-<div>
-<common-layout>
-Home
-</common-layout>
-<err-page>
-</err-page>
-
-</div>
+<v-app>
+  <v-navigation-drawer app></v-navigation-drawer>
+  <v-toolbar app></v-toolbar>
+  <v-content>
+    <v-container fluid>
+      <router-view></router-view>
+    </v-container>
+  </v-content>
+  <v-footer app></v-footer>
+</v-app>
 </template>
-<script>
-import CommonLayout from '../../layouts/Common'
-import ErrPage from './Err'
 
-export default {
-    components: {
-        ErrPage,
-        CommonLayout
-    }
-}
+<script>
+  export default {
+    props: {
+      source: String,
+    },
+    data: () => ({
+      drawer: null,
+    }),
+  }
 </script>
