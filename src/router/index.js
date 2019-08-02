@@ -1,4 +1,5 @@
 import Router from 'vue-router'
+import AuthGuarg from './auth-guard'
 //Common
 import Home from '../pages/common/Home'
 import About from '../pages/common/About'
@@ -13,7 +14,7 @@ export default new Router({
     {
       name:'homePage',
       path: '',
-      component: Home
+      component: Home,
     },
     {
       path: '/about',
