@@ -24,21 +24,29 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="deep-purple darken-1" dark fixed app>
+    <!--TOOLBAR-->
+    <v-toolbar color="blue darken-4" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>
+      <div class="logo">
+        <img src="../assets/img/logo.png">
+      </div>
+      </v-toolbar-title>
     </v-toolbar>
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout
-          justify-center
-          align-center>
-          <v-flex text-xs-center>
-           <slot></slot>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
+
+    <v-container>
+      <v-layout>
+        <!--Center pane-->        
+        <v-flex xs10>
+          <v-content>
+            <slot></slot>
+          </v-content>
+        </v-flex>
+        <!--Right pane-->        
+        <v-flex xs2>
+        </v-flex>
+      </v-layout>
+    </v-container>
     <v-footer color="indigo" app>
       <span class="white--text">&copy; 2017</span>
     </v-footer>

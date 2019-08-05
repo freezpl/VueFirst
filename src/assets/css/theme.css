@@ -1,3 +1,7 @@
-form input{
-  
+.logo {
+    margin-top: 5px;
+}
+
+.articles .article img{
+    width: 100%;
 }
