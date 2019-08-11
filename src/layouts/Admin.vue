@@ -25,7 +25,7 @@
       </v-list>
     </v-navigation-drawer>
     <!--TOOLBAR-->
-    <v-toolbar color="blue darken-4" dark fixed app>
+    <v-toolbar color="blue-grey darken-3" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>
       <div class="logo">
@@ -43,11 +43,11 @@
           </v-content>
         </v-flex>
         <!--Right pane-->        
-        <v-flex xs2 right-pane>
+        <v-flex xs2>
         </v-flex>
       </v-layout>
     </v-container>
-    <v-footer color="blue darken-4" app>
+    <v-footer color="blue-grey darken-3" app>
       <span class="white--text">&copy; 2017</span>
     </v-footer>
   </v-app>

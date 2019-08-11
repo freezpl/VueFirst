@@ -5,3 +5,11 @@
 .articles .article img{
     width: 100%;
 }
+
+.articles .flex {
+    padding: 10px;
+}
+
+.right-pane {
+    background: #d1e3ff;
+}

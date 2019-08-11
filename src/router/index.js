@@ -4,6 +4,11 @@ import AuthGuarg from './auth-guard'
 import Home from '../pages/common/Home'
 import About from '../pages/common/About'
 import ErrComp from '../pages/common/Err'
+
+//admin
+import AdminHome from '../pages/admin/AdminHome'
+import AdminLogin from '../pages/admin/AdminLogin'
+
 ///Tests
 import Test from '../pages/test/Test'
 import Test1 from '../pages/test/Test1Form'
@@ -31,6 +36,15 @@ export default new Router({
         name: 'errPage'
       }
     },
+    {
+      path: '/admin',
+      component: AdminHome, 
+    },
+    {
+      path: '/administrator',
+      component: AdminLogin, 
+    },
+
     //tests
     {
       path: '/test',
