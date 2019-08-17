@@ -1,4 +1,9 @@
+import store from '../store'
+
 export default function(to, from, next){
-    //localStorage.setItem('user',JSON.stringify(2342423))
-        //  next('/about');
+    if(store.getters.getAuthState == false){
+        next('/administrator');
+    }
+    else
+    next();
 }

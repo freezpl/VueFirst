@@ -10,11 +10,13 @@ import axios from 'axios'
 import VARS from './helper/vars'
 Vue.use(Router);
 
+import VueFroala from 'vue-froala-wysiwyg'
+Vue.use(VueFroala)
+require('froala-editor/js/froala_editor.pkgd.min.js')
+require('froala-editor/css/froala_editor.pkgd.min.css')
+require('froala-editor/css/froala_style.min.css')
 
 axios.defaults.baseURL = VARS.BASEURL;
-//let token = localStorage.getItem('token');
-//axios.defaults.headers.common['Authorization'] = "Bearer " + token;
-//axios.defaults.headers.common['Content-Type'] = "application/json";
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
@@ -27,8 +29,10 @@ new Vue({
       }
    }).then(resp => {
       console.log(resp.data);
-    });
-    console.log(localStorage.getItem('token'));
+      this.$store.commit('setAuthState', true);
+    }).catch(()=>{
+      this.$store.commit('setAuthState', false);
+    });    
   },
   el: '#app',
   router,

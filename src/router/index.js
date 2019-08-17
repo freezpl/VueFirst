@@ -6,8 +6,10 @@ import About from '../pages/common/About'
 import ErrComp from '../pages/common/Err'
 
 //admin
+import AdminMainPage from '../pages/admin/AdminMainPage'
 import AdminHome from '../pages/admin/AdminHome'
 import AdminLogin from '../pages/admin/AdminLogin'
+import NewArticle from '../pages/admin/NewArticle'
 
 ///Tests
 import Test from '../pages/test/Test'
@@ -38,11 +40,25 @@ export default new Router({
     },
     {
       path: '/admin',
-      component: AdminHome, 
+      component: AdminMainPage,
+      children: [
+        {
+          name: 'adminHome',
+          path: '',
+          component: AdminHome,
+          beforeEnter: AuthGuarg,
+        },
+        {
+          name: 'newArticle',
+          path: 'new-article',
+          component: NewArticle,
+          beforeEnter: AuthGuarg,
+        },
+      ] 
     },
     {
       path: '/administrator',
-      component: AdminLogin, 
+      component: AdminLogin,
     },
 
     //tests

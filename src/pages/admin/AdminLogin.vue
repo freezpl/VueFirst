@@ -11,7 +11,7 @@
       <v-text-field v-model="password" :type="'password'" :rules="passRules" label="Password" required>
       </v-text-field>
       <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
-        Send
+        Login
       </v-btn>
       <v-btn
         color="error"

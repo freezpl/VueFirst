@@ -20,14 +20,15 @@ export default {
                 password: vueComp.password
             })
             .then(resp => {
-                console.log(resp.data);
                 if(resp.data.access_token != 'undefined'){
-                    console.log(resp.data.access_token);
                     localStorage.setItem('token', resp.data.access_token);
+                    context.commit('setAuthState', true);
                     vueComp.$router.push({path:"/admin"});
                 }
                 else
-                    console.log(resp.data);
+                {
+                    context.commit('setAuthState', false);
+                }
             })
             .catch(resp => {
                 
